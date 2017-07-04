@@ -30,9 +30,20 @@ foreach ($client->parseEvents() as $event) {
         case 'message':
             $message = $event['message'];
             $source = $event['source'];
-$test=$message['text'].$source['userId'];
+            $test = $message['text'] . $source['userId'];
             switch ($message['type']) {
                 case 'text':
+                    switch ($message['text']) {
+                        case 'uid':
+                            $test = $source['userId'];
+                            break;
+                        case 'rid':
+                            $test = $event['replyToken'];
+                            break;
+                        default:
+                            $test = $message['text'];
+                            break;
+                    }
                     $client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
                         'messages' => array(
