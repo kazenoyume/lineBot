@@ -38,7 +38,7 @@ $test=$message['text'] + $source['userId'];
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' => $event['replyToken']
+                                'text' =>  $source['userId']
                             )
                         )
                     ));
