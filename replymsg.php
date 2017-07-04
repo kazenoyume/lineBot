@@ -1,12 +1,4 @@
 <?php
-
-
-ini_set('display_errors', 1);
-ini_set('log_errors', 1);
-ini_set('error_log', dirname(__FILE__) . '/error_log.txt');
-error_reporting(E_ALL);
-
-
 include "LINE/LINEBot/HTTPClient/CurlHTTPClient.php";
 include "LINE/LINEBot.php";
 include "LINE/LINEBot/MessageBuilder/TextMessageBuilder.php";
@@ -35,8 +27,10 @@ $secret = '455f74dac591d18ede2d996eb202f440';
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('PMYTOjEFFN7ZnBSMDdKUmtgkjod7Xkukm4g2LNyFGB7q6FsPFym2zhiUsN7GWbb5DkJEV1nPsOqmvZ81MaUTUdokXu0pxd/ZM9Vt5nxGdghJkveeo2MfWR7mhY6EuSfMv94qG6rZmkDPLn2Cz+ik1QdB04t89/1O/w1cDnyilFU=');
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $secret]);
 
-$textMessageBuilder = new MessageBuilder\TextMessageBuilder($message);
-$response = $bot->pushMessage($targetMID, $textMessageBuilder);
+//$textMessageBuilder = new MessageBuilder\TextMessageBuilder($message);
+//$response = $bot->pushMessage($targetMID, $textMessageBuilder);
+$textMessageBuilder = new MessageBuilder\TextMessageBuilder($jsonObject);
+$response = $bot->pushMessage('Uaa0637612b1059d6b2d584a2b5bd2889', $textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
