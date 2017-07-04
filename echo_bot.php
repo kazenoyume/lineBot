@@ -30,7 +30,7 @@ foreach ($client->parseEvents() as $event) {
         case 'message':
             $message = $event['message'];
             $source = $event['source'];
-$test=$message['text'] + $source['userId'];
+$test=$message['text'].$source['userId'];
             switch ($message['type']) {
                 case 'text':
                     $client->replyMessage(array(
@@ -38,7 +38,7 @@ $test=$message['text'] + $source['userId'];
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' =>  $source['userId']
+                                'text' => $test
                             )
                         )
                     ));
