@@ -8,8 +8,8 @@ use LINE;
 use LINE\LINEBot\MessageBuilder;
 
 $access_token= 'VkVYO1PZY9uGKGe8KK4Jr+HiUJqYjRj44pvK4Bt16cSn664s6l4MREDThTK4V2xICIsN6WHEz5fQbR6cEJC1/A/pfhpGg3knwiu1pT2qVYf5FEORD4HgfNQ8f/0yyyQd8jYkQss3zfdCV/Nc/HtgFgdB04t89/1O/w1cDnyilFU=';
-
-
+                                    // VkVYO1PZY9uGKGe8KK4Jr+HiUJqYjRj44pvK4Bt16cSn664s6l4MREDThTK4V2xICIsN6WHEz5fQbR6cEJC1/A/pfhpGg3knwiu1pT2qVYf5FEORD4HgfNQ8f/0yyyQd8jYkQss3zfdCV/Nc/HtgFgdB04t89/1O/w1cDnyilFU=
+                           
 
 
 $jsonString = file_get_contents('php://input');
@@ -22,7 +22,7 @@ $message = $event['message'];
 
 header("Content-Type:text/html; charset=utf-8");
 
-$secret = '455f74dac591d18ede2d996eb202f440';
+$secret = 'c6e4c7aadff9c795ac2d18ad56fc36cf';
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $secret]);
 
