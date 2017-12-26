@@ -86,7 +86,7 @@ function get_url($url)  {
 
 	$timeout = 5;  
 
-	curl_setopt($ch,CURLOPT_URL,'https://floating-cliffs-58017.herokuapp.com/pushmsg.php?1234UID=Uaa0637612b1059d6b2d584a2b5bd2889&text='+$url);  
+	curl_setopt($ch,CURLOPT_URL,'https://floating-cliffs-58017.herokuapp.com/pushmsg.php?UID=Uaa0637612b1059d6b2d584a2b5bd2889&text='+$url);  
 
 	curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);  
 
